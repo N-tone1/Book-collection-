@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="button" style="float: left;">Home</a> <!-- Home Button -->
+
+        <header>
+            <h1>Book List</h1>
+            <p>Track and manage your favorite books.</p>
+        </header>
+
+        <!-- Form to add a new book -->
+        <section class="form-section">
+            <h2>Add a New Book</h2>
+            <form action="/books" method="POST">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+
+                <label for="rating">Rating (1-5):</label>
+                <input type="number" id="rating" name="rating" min="1" max="5">
+
+                <label for="date_read">Date Read:</label>
+                <input type="date" id="date_read" name="date_read">
+
+                <button type="submit">Add Book</button>
+            </form>
+        </section>
+
+        <!-- Display the list of books -->
+        <section class="book-list-section">
+            <h2>My Books</h2>
+            <ul class="book-list">
+                <% books.forEach(book => { %>
+                    <li>
+                        <strong><%= book.title %></strong> by <%= book.author %> - 
+                        Rating: <%= book.rating || 'N/A' %> - 
+                        Date Read: <%= book.date_read ? new Date(book.date_read).toLocaleDateString() : 'N/A' %>
+                        <img src="<%= book.cover_image_url %>" alt="Cover image">
+                    </li>
+                <% }); %>
+            </ul>
+        </section>
+
+        <!-- Search for Books -->
+        <section class="search-section">
+            <h2>Search for Books</h2>
+            <form action="/books/search" method="GET">
+                <input type="text" name="query" placeholder="Enter book title or author" required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <footer>
+            <a href="/books" class="button">View All Books</a> <!-- Styled as a button -->
+        </footer>
+    </div>
+</body>
+</html>

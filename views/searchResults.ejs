@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="button" style="float: left;">Home</a> <!-- Home Button -->
+
+    <h1>Search Results</h1>
+
+    <% if (books.length > 0) { %>
+        <ul class="book-list"> <!-- i have added a same class as in the book.ejs form -->
+            <% books.forEach(book => { %>
+                <li>
+                    <strong><%= book.volumeInfo.title %></strong> by <%= book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'Unknown' %>
+                    <img src="<%= book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : '' %>" alt="Cover image" style="width: 50px; height: 75px;">
+                    <form action="/books" method="POST" class="delete-form"> <!-- i have added a same class as in the book.ejs form -->
+                        <input type="hidden" name="title" value="<%= book.volumeInfo.title %>">
+                        <input type="hidden" name="author" value="<%= book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : '' %>">
+                        <input type="hidden" name="rating" value="N/A"> <!-- You can add a rating option if needed -->
+                        <input type="hidden" name="cover_image_url" value="<%= book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : '' %>">
+                        <input type="hidden" name="date_read" value="<%= new Date().toISOString().split('T')[0] %>"> <!-- Optional, default current date -->
+                        <button type="submit" class="delete-button">Add to My Books</button> <!-- i have added a same class as in the book.ejs form -->
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No results found.</p>
+    <% } %>
+
+    <a href="/" class="button">Go Back</a>
+</div>
+</body>
+</html>

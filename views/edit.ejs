@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="button" style="float: left;">Home</a> <!-- Home Button -->
+
+    <h1>Edit Book</h1>
+
+    <form action="/books/edit/<%= book.id %>" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="<%= book.title %>" required>
+        
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" value="<%= book.author %>">
+
+        <label for="rating">Rating (1-5):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" value="<%= book.rating %>">
+
+        <label for="date_read">Date Read:</label>
+        <input type="date" id="date_read" name="date_read" value="<%= book.date_read %>">
+
+        <label for="cover_image_url">Cover Image URL:</label>
+        <input type="text" id="cover_image_url" name="cover_image_url" value="<%= book.cover_image_url %>">
+
+        <button type="submit">Update Book</button>
+    </form>
+
+    <a href="/books" class="button">Cancel</a>
+    </div>
+</body>
+</html>

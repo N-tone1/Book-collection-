@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Collection</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="button" style="float: left;">Home</a> <!-- Home Button -->
+
+        <h1>My Book Collection</h1>
+
+        <ul class="book-list"> <!-- Add a class for styling -->
+            <% books.forEach(book => { %>
+                <li>
+                    <strong><%= book.title %></strong> by <%= book.author %> - 
+                    Rating: <%= book.rating || 'N/A' %> - 
+                    Date Read: <%= book.date_read ? new Date(book.date_read).toLocaleDateString() : 'N/A' %>
+                    <img src="<%= book.cover_image_url %>" alt="Cover image" style="width: 50px; height: 75px;">
+                    <a href="/books/edit/<%= book.id %>" class="edit">Edit</a>
+                    <form action="/books/delete/<%= book.id %>" method="POST" class="delete-form"> <!-- Use a class for better styling -->
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+
+        <a href="/" class="button">Go Back</a> <!-- Link to go back to the index page -->
+    </div> 
+</body>
+</html>

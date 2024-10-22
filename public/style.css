@@ -1,0 +1,199 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('./LibraryPhoto.jpeg'); /* Path to library image */
+    background-size: auto; /* Cover the entire background */
+    background-attachment: fixed; /* Fixed background for a cool effect */
+    color: #333; /* Dark text for readability */
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px; /* Center the content */
+    margin: 0 auto; /* Center the container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Header Styles */
+header {
+    text-align: center; /* Center header text */
+}
+
+h1 {
+    color: #8b4513; /* Dark brown for a Middle-earth feel */
+}
+
+p {
+    color: #555; /* Gray for description text */
+    font-size: 1.2em;
+}
+
+/* Form Section Styles */
+.form-section {
+    margin-bottom: 30px; /* Space between sections */
+}
+
+
+
+/* Form Styles */
+form {
+    background: #fff; /* White background for forms */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Label Styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input and Button Styles */
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff; /* Blue color for buttons */
+
+    color: white;
+    border: none;
+    cursor: pointer; /* Pointer on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/*edit link*/
+.edit{
+    
+    margin-left: 10px;
+}
+
+form.delete-form{
+    background-color: white;
+    padding:0;
+    margin:0;
+    margin-left: 10px;
+}
+
+/* Delete Button Styles */
+.delete-button {
+    background-color: #dc3545; /* Red color for delete button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px; /* Padding for the button */
+    margin:0;
+ 
+    cursor: pointer; /* Pointer cursor on hover */
+    display: block; /* Make the button take full width */
+}
+/* List Styles */
+.book-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    
+}
+
+/* List Item Styles */
+.book-list li {
+    background-color: #fff; /* White background for list items */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px 0;
+    padding: 15px;
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between text and image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Image Styles */
+.book-list img {
+    max-width: 50px; /* Responsive image */
+    max-height: 75px; /* Maintain aspect ratio */
+    margin-left: 15px; /* Space between text and image */
+}
+
+/* Search Section Styles */
+.search-section {
+    margin-top: 30px; /* Space before the search section */
+
+}
+
+/* Base Styles */
+
+
+/* Button Styles */
+.button {
+    display: inline-block; /* Allow for block properties */
+    padding: 10px 15px; /* Add padding */
+    color: white; /* White text */
+    background-color: #8b4513; /* Same color as h1 for consistency */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Space above button */
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #7a3d10; /* Slightly darker on hover */
+}
+
+/* Form Styles */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Other existing styles remain unchanged... */
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .book-list li {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .book-list img {
+        margin-left: 0; /* Remove left margin for smaller screens */
+        margin-bottom: 10px; /* Space below image */
+    }
+    
+    /* Adjust padding and margin for mobile */
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em; /* Adjust header font size for mobile */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust section header font size for mobile */
+    }
+
+    input, button {
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+}
