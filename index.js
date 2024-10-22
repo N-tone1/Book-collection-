@@ -8,7 +8,7 @@ const app = express();
 const port = 3000;
 
 // Add your Google Books API key directly here
-const googleBooksApiKey = 'AIzaSyC1sO05yErWzd5EblHi6ttwEZEhMC67dmQ';  // Replace with your actual API key
+const googleBooksApiKey = "YOUR API KEY PROVIDED BY GOOGLE";  // Replace with your actual API key
 
 // Create the connection with your PostgreSQL database and connect to your books table
 const db = new pg.Client({
