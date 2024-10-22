@@ -29,3 +29,38 @@ EJS: Templating engine used to dynamically generate HTML.
 PostgreSQL: Relational database used for storing book information.
 
 CSS: Styles for the front-end, including custom buttons, forms, and layout.
+
+Installation
+Clone the repository:
+
+bash
+git clone https://github.com/your-username/your-repo.git
+Navigate into the project folder:
+
+bash
+cd your-repo
+Install dependencies:
+
+bash
+npm install
+Set up the database:
+
+Ensure you have PostgreSQL installed.
+Create a database for the project.
+Update the database connection details in your code if necessary.
+Run the server:
+
+bash
+npm start
+Visit the app: Open http://localhost:3000 in your web browser.
+
+Usage
+
+Home Page: Displays the list of books in the user's collection.
+Adding a Book: Fill out the form to add a new book to the collection.
+Editing a Book: Click the "Edit" link next to any book entry to modify its details.
+Deleting a Book: Click the "Delete" button next to any book entry to remove it from the collection.
+
+Contribution
+
+Feel free to submit issues or pull requests if you would like to contribute to this project.
